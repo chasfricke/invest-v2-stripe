@@ -21,7 +21,7 @@ app.get("/bill", (request, response) => {
 });
 
 app.post('/charge', (request, response) => {
-  charge(request.body.amount * 100, request.body.service, request.body.stripeToken)
+  charge(request.body.amount * 100, request.body.stripeToken)
     .then(charge => {
       response.render('success', { amount: charge.amount / 100 });
     })
