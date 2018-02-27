@@ -5,7 +5,7 @@ const app = express();
 
 const bodyParser = require("body-parser");
 const path = require("path");
-var stripe = require('stripe')(process.env.STRIPE_KEY);
+var stripe = require("stripe")(process.env.STRIPE_KEY);
 
 app.use(bodyParser.urlencoded({extended: false}));
 app.set("views", path.join(__dirname, "views"));
@@ -30,7 +30,7 @@ app.post('/charge', (request, response) => {
     });
 });
 
-const charge = (amount, service, token) => {
+const charge = (amount, token) => {
   return new Promise((resolve, reject) => {
     stripe.charges.create(
       {
