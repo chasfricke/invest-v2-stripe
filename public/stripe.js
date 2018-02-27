@@ -1,5 +1,4 @@
 
-
 var stripe = Stripe('pk_test_cSIYXQDA6V9z8WYZfJ30e71J');
 
 // Create an instance of Elements.

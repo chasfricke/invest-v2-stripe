@@ -1,9 +1,15 @@
 require("dotenv").load();
-
+var stripe;
 const express = require("express");
 const app = express();
+if (process.env.STRIPE_KEY){
+  stripe = require("stripe")(process.env.STRIPE_KEY);
+} else {
+  console.log("broken")
+}
 
-var stripe = require("stripe")(process.env.STRIPE_KEY);
+
+
 const bodyParser = require("body-parser");
 const path = require("path");
 
