@@ -60,6 +60,7 @@ form.addEventListener('submit', function(event) {
 });
 
 function stripeTokenHandler(token) {
+  var form = document.getElementById('payment-form');
   const hiddenInput = document.createElement('input');
   hiddenInput.setAttribute('type', 'hidden');
   hiddenInput.setAttribute('name', 'stripeToken');
