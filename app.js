@@ -3,9 +3,10 @@ require("dotenv").load();
 const express = require("express");
 const app = express();
 
+var stripe = require("stripe")(process.env.STRIPE_KEY);
 const bodyParser = require("body-parser");
 const path = require("path");
-var stripe = require("stripe")(process.env.STRIPE_KEY);
+
 
 app.use(bodyParser.urlencoded({extended: false}));
 app.set("views", path.join(__dirname, "views"));
@@ -30,11 +31,11 @@ app.post('/charge', (request, response) => {
     });
 });
 
-const charge = (amount, token) => {
+function charge(amount, token) {
   return new Promise((resolve, reject) => {
     stripe.charges.create(
       {
-        amount,
+        amount: amount,
         currency: 'usd',
         source: token
       },
