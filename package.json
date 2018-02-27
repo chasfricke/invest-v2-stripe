@@ -1,0 +1,23 @@
+{
+  "name": "stripe-drill",
+  "version": "0.0.1",
+  "description": "Libraries drill 2",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js"
+  },
+  "author": "Kyle Coberly",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "dotenv": "^5.0.0",
+    "express": "^4.16.2",
+    "hbs": "^4.0.1",
+    "path": "^0.12.7",
+    "stripe": "^5.5.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.12.5"
+  }
+}

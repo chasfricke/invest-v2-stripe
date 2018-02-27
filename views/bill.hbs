@@ -1,0 +1,22 @@
+<section>
+  <h2>Monthly Service Invoice</h2>
+  <div class="form-wrapper">
+    <form action="/charge" method="post" id="payment-form">
+      <div class="form-row">
+        <input type="number" min="0" max="387" name="amount" id="amount" placeholder="How much to pay?" />
+        <label for="card-element">
+          Credit or debit card
+        </label>
+        <div id="card-element" class="StripeElement">
+          <!-- A Stripe Element will be inserted here. -->
+        </div>
+
+        <!-- Used to display form errors. -->
+        <div id="card-errors" role="alert"></div>
+      </div>
+
+      <button>Submit Payment</button>
+    </form>
+  </div>
+</section>
+<script src="stripe.js"></script>
