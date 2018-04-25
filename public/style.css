@@ -45,3 +45,7 @@ main {
 .StripeElement--webkit-autofill {
   background-color: #fefde5 !important;
 }
+
+#amount {
+    width: 100px;
+}
